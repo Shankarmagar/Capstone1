@@ -70,19 +70,22 @@ public class AccountLedger {
         else if(userInput == 'D'|| userInput == 'd')
         {
             ShowDeposit(myLists);
+            AskUserToContinueOrExit(scanner);
         }
         else if(userInput == 'A'|| userInput == 'a')
         {
             ShowAll(myLists);
+            AskUserToContinueOrExit(scanner);
         }
         else if(userInput == 'P' || userInput == 'p')
         {
             ShowPayments(myLists);
+            AskUserToContinueOrExit(scanner);
         }
         else if(userInput == 'R' || userInput == 'r')
         {
             ShowReportScreen(scanner, myLists);
-
+            AskUserToContinueOrExit(scanner);
         }
     }
 
@@ -111,6 +114,8 @@ public class AccountLedger {
             String writeLine = String.format("%s|%s|%s|%s|$-%.2f",date,time,description,vendor,amount); // "8.985678" -> 8.99
             writer.write(writeLine);
             writer.close();
+            System.out.println("Payment transaction is saved!!!");
+            DisplayHome(scanner);
         }
         catch(IOException e)
         {
@@ -144,7 +149,9 @@ public class AccountLedger {
             String writeLine = String.format("%s|%s|%s|%s|$%.2f",date,time,description,vendor,amount);
             writer.write(writeLine);
             writer.close();
-            System.out.println("Your transaction has been recorded...\nDo you want to deposit another transaction(Y/N): ");
+            System.out.println("Your transaction has been recorded...");
+
+            DisplayHome(scanner);
 
         }
         catch(IOException e)
@@ -358,5 +365,18 @@ public class AccountLedger {
         System.out.println(res.toString());
     }
 
+    public static void AskUserToContinueOrExit(Scanner scanner)
+    {
+        System.out.println("Do you want to continue or exit: ");
+        {
+            char answer = scanner.next().charAt(0);
+            if(answer == 'y'|| answer == 'Y')
+            {
+                DisplayLedger(scanner);
+            }
+        }
+    }
+
 }
+
 
