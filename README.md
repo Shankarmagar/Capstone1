@@ -20,7 +20,10 @@ The following **required** functionality is completed:
 - [x] **Inside Report User can able to run custom search for Month to Date, Previous Month, Year To Date, Previous Year, Search by Vendor**
 
 
+### Screenshots
 
+ | Home Screen | Ledger Screen | Report Screen
+ | <img src="https://github.com/Shankarmagar/Capstone1/blob/main/images/Screenshot%202023-10-24%20at%2011.19.10%E2%80%AFAM.png"> | <img src="https://github.com/Shankarmagar/Capstone1/blob/main/images/Screenshot%202023-10-24%20at%2011.19.30%E2%80%AFAM.png"> | <img src = "https://github.com/Shankarmagar/Capstone1/blob/main/images/Screenshot%202023-10-24%20at%2011.19.42%E2%80%AFAM.png">
 
 ## Notes
 
