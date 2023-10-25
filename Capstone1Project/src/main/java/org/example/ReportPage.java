@@ -57,12 +57,18 @@ public class ReportPage {
 
     public static void displayMonthToDate(ArrayList<Transaction> myLists, String CurrentDate)
     {
+        boolean isEmpty = true;
         for(int i= myLists.size()-1; i>=0; i--)
         {
             if(myLists.get(i).getDate().substring(3).equals(CurrentDate.substring(3))) {
                 String s = String.format("%-16s %-10s %-35s %-30s %.2f", myLists.get(i).getDate(), myLists.get(i).getTime(), myLists.get(i).getDescription(), myLists.get(i).getVendor(), myLists.get(i).getAmount());
                 System.out.println(s);
+                isEmpty = false;
             }
+        }
+        if(isEmpty)
+        {
+            System.out.println("You don't any transactions in this month");
         }
     }
 
@@ -71,24 +77,37 @@ public class ReportPage {
         int currentMonth = Integer.parseInt(currentDate.substring(3,5));
         String previousMonth = String.format("%02d/%s",currentMonth-1,currentDate.substring(6));
         System.out.println("PreviousMonth: "+ previousMonth);
+        boolean isEmpty = true;
         for(int i= myLists.size()-1; i>=0; i--)
         {
             if(myLists.get(i).getDate().substring(3).equals(previousMonth)) {
                 String s = String.format("%-16s %-10s %-35s %-30s %.2f", myLists.get(i).getDate(), myLists.get(i).getTime(), myLists.get(i).getDescription(), myLists.get(i).getVendor(), myLists.get(i).getAmount());
                 System.out.println(s);
+                isEmpty = false;
             }
+
+        }
+        if(isEmpty)
+        {
+            System.out.println("You do not have any transactions on previous month");
         }
     }
 
     public static void displayYearToDate(ArrayList<Transaction> myLists, String currentDate)
     {
         String currentYear = currentDate.substring(6);
+        boolean isEmpty = true;
         for(int i= myLists.size()-1; i>=0; i--)
         {
             if(myLists.get(i).getDate().substring(6).equals(currentYear)) {
                 String s = String.format("%-16s %-10s %-35s %-30s %.2f", myLists.get(i).getDate(), myLists.get(i).getTime(), myLists.get(i).getDescription(), myLists.get(i).getVendor(), myLists.get(i).getAmount());
                 System.out.println(s);
+                isEmpty = false;
             }
+        }
+        if(isEmpty)
+        {
+            System.out.println("You do not have any transactions for this year.");
         }
     }
     public static void displayPreviousYear(ArrayList<Transaction>myLists, String currentDate)
@@ -96,12 +115,18 @@ public class ReportPage {
         int currentYear = Integer.parseInt(currentDate.substring(6));
         String previousYear = ""+(currentYear-1);
         System.out.println("PreviousYear: "+ previousYear);
+        boolean isEmpty = true;
         for(int i= myLists.size()-1; i>=0; i--)
         {
             if(myLists.get(i).getDate().substring(6).equals(previousYear)) {
                 String s = String.format("%-16s %-10s %-35s %-30s %.2f", myLists.get(i).getDate(), myLists.get(i).getTime(), myLists.get(i).getDescription(), myLists.get(i).getVendor(), myLists.get(i).getAmount());
                 System.out.println(s);
+                isEmpty = false;
             }
+        }
+        if(isEmpty)
+        {
+            System.out.println("You do not have any transactions on previous year");
         }
     }
 
