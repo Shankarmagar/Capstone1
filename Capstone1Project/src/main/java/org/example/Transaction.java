@@ -1,6 +1,7 @@
 package org.example;
 import java.util.Comparator;
-public class Transaction {
+public class
+Transaction {
     private String date;
     private String time;
     private String description;
