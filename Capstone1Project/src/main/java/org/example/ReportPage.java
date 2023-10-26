@@ -8,62 +8,49 @@ import java.util.Scanner;
 
 public class ReportPage {
     public static void showReportScreen(ArrayList<Transaction> listsOfEntries)
-    {
+    Mon{
 
         Scanner scanner = new Scanner(System.in);
         boolean isValid = true;
 
+            while(isValid) {
+                System.out.print("""
+                                                         -REPORT SCREEN-
+                        Please follow the following instructions to proceed:
+                         1) Month to Date
+                         2) Previous Month
+                         3) Year To Date
+                         4) Previous Year
+                         5) Search by Vendor
+                         6) Custom Search
+                         0) Back
+                        """);
+                System.out.println("Please choose your option: ");
+                int usersInput = scanner.nextInt();
 
-            System.out.print("""
-                                                 -REPORT SCREEN-
-                Please follow the following instructions to proceed:
-                 1) Month to Date
-                 2) Previous Month
-                 3) Year To Date
-                 4) Previous Year
-                 5) Search by Vendor
-                 6) Custom Search
-                 0) Back
-                """);
-            System.out.println("Please choose your option: ");
-            int usersInput = scanner.nextInt();
+                LocalDateTime currentTime = LocalDateTime.now();
+                DateTimeFormatter formatting = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-            LocalDateTime currentTime = LocalDateTime.now();
-            DateTimeFormatter formatting = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                String currentDate = currentTime.format(formatting);
 
-            String currentDate = currentTime.format(formatting);
-
-            if(usersInput == 1)
-            {
-                displayMonthToDate(listsOfEntries, currentDate);
-            }
-            else if(usersInput == 2)
-            {
-                displayPreviousMonth(listsOfEntries, currentDate);
-            }
-            else if (usersInput == 3)
-            {
-                displayYearToDate(listsOfEntries, currentDate);
-            }
-            else if(usersInput == 4)
-            {
-                displayPreviousYear(listsOfEntries, currentDate);
-            }
-            else if(usersInput == 5)
-            {
-                displayByVendor(listsOfEntries, scanner);
-            }
-            else if(usersInput == 6)
-            {
-                CustomSearch.showScreenForCustomSearch(listsOfEntries);
-            }
-            else if(usersInput == 0)
-            {
-                return;
-            }
-            else
-            {
-                System.out.println("Invalid entry please read again.");
+                if (usersInput == 1) {
+                    displayMonthToDate(listsOfEntries, currentDate);
+                } else if (usersInput == 2) {
+                    displayPreviousMonth(listsOfEntries, currentDate);
+                } else if (usersInput == 3) {
+                    displayYearToDate(listsOfEntries, currentDate);
+                } else if (usersInput == 4) {
+                    displayPreviousYear(listsOfEntries, currentDate);
+                } else if (usersInput == 5) {
+                    displayByVendor(listsOfEntries, scanner);
+                } else if (usersInput == 6) {
+                    CustomSearch.showScreenForCustomSearch(listsOfEntries);
+                } else if (usersInput == 0) {
+                    isValid = false;
+                    return;
+                } else {
+                    System.out.println("Invalid entry please read again.");
+                }
             }
 
         }

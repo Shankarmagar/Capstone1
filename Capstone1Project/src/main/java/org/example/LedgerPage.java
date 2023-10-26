@@ -14,6 +14,8 @@ public class LedgerPage {
 
         boolean isValid = true;
         Scanner scanner = new Scanner(System.in);
+
+        while(isValid) {
             System.out.print("""
                                                      -LEDGER SCREEN-
                     Please follow the following instructions to proceed:
@@ -27,6 +29,7 @@ public class LedgerPage {
             ArrayList<Transaction> myLists = getMyEntries();
             myLists.sort(new DateComparator());
             if (userInput == 'H' || userInput == 'h') {
+                isValid = false;
                 return;
 
             } else if (userInput == 'D' || userInput == 'd') {
@@ -43,10 +46,11 @@ public class LedgerPage {
 
             } else if (userInput == 'R' || userInput == 'r') {
                 ReportPage.showReportScreen(myLists);
-            }
-            else{
+            } else {
                 System.out.println("Invalid input. re-enter the input");
             }
+
+        }
 
     }
 

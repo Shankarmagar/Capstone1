@@ -1,7 +1,6 @@
 package org.example;
 
 import java.io.IOError;
-import java.security.PublicKey;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -72,10 +71,12 @@ public class CheckInput {
         try {
             if (Integer.parseInt(t[0]) > 24 ) // hours
             {
+                System.out.println("Your hour input is invalid");
                 return false;
             }
             if(Integer.parseInt(t[1]) > 59)
             {
+                System.out.println("Your min is invalid.");
                 return false;
             }
         }
@@ -88,7 +89,7 @@ public class CheckInput {
 
     public static boolean checkAmount(double amt)
     {
-        if(amt<0)
+        if(amt<0) //if amt is in negative
         {
             return false;
         }

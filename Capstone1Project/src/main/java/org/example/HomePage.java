@@ -44,7 +44,6 @@ public class HomePage {
     public static void doPayment(Scanner scanner)
     {
 
-
         System.out.println("Enter the Date in DD/MM/YYYY format: ");
         String date = scanner.nextLine();
         date = scanner.nextLine();
