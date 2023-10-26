@@ -9,41 +9,43 @@ import java.util.Scanner;
 public class LedgerPage {
     public static void displayLedger()
     {
+
+        boolean isValid = true;
         Scanner scanner = new Scanner(System.in);
-        System.out.print("""
-                                                 -LEDGER SCREEN-
-                Please follow the following instructions to proceed:
-                'A' All entries
-                'D' Deposits
-                'P' Payments
-                'R' Reports
-                'H' Home
-                """);
-        char userInput = scanner.next().charAt(0);
-        ArrayList<Transaction> myLists = getMyEntries();
-        myLists.sort(new DateComparator());
-        if(userInput == 'H' || userInput == 'h')
-        {
-            HomePage.showHomeScreen();
-        }
-        else if(userInput == 'D'|| userInput == 'd')
-        {
-            showDeposit(myLists);
-            askUserToContinueOrExit(scanner);
-        }
-        else if(userInput == 'A'|| userInput == 'a')
-        {
-            showAll(myLists);
-            askUserToContinueOrExit(scanner);
-        }
-        else if(userInput == 'P' || userInput == 'p')
-        {
-            showPayments(myLists);
-            askUserToContinueOrExit(scanner);
-        }
-        else if(userInput == 'R' || userInput == 'r')
-        {
-            ReportPage.showReportScreen(myLists);
+        while(isValid) {
+            System.out.print("""
+                                                     -LEDGER SCREEN-
+                    Please follow the following instructions to proceed:
+                    'A' All entries
+                    'D' Deposits
+                    'P' Payments
+                    'R' Reports
+                    'H' Home
+                    """);
+            char userInput = scanner.next().charAt(0);
+            ArrayList<Transaction> myLists = getMyEntries();
+            myLists.sort(new DateComparator());
+            if (userInput == 'H' || userInput == 'h') {
+                return;
+
+            } else if (userInput == 'D' || userInput == 'd') {
+                showDeposit(myLists);
+                askUserToContinueOrExit(scanner);
+
+            } else if (userInput == 'A' || userInput == 'a') {
+                showAll(myLists);
+                askUserToContinueOrExit(scanner);
+
+            } else if (userInput == 'P' || userInput == 'p') {
+                showPayments(myLists);
+                askUserToContinueOrExit(scanner);
+
+            } else if (userInput == 'R' || userInput == 'r') {
+                ReportPage.showReportScreen(myLists);
+            }
+            else{
+                System.out.println("Invalid input. re-enter the input");
+            }
         }
     }
     public static void showDeposit(ArrayList<Transaction> listOfEntries)

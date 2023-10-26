@@ -9,7 +9,11 @@ import java.util.Scanner;
 public class ReportPage {
     public static void showReportScreen(ArrayList<Transaction> listsOfEntries)
     {
+
         Scanner scanner = new Scanner(System.in);
+        boolean isValid = true;
+        while(isValid)
+        {
             System.out.print("""
                                                  -REPORT SCREEN-
                 Please follow the following instructions to proceed:
@@ -18,6 +22,7 @@ public class ReportPage {
                  3) Year To Date
                  4) Previous Year
                  5) Search by Vendor
+                 6) Custom Search
                  0) Back
                 """);
             System.out.println("Please choose your option: ");
@@ -48,10 +53,15 @@ public class ReportPage {
             {
                 displayByVendor(listsOfEntries, scanner);
             }
+            else if(usersInput == 6)
+            {
+                CustomSearch.showScreenForCustomSearch(listsOfEntries);
+            }
             else if(usersInput == 0)
             {
-                LedgerPage.displayLedger();
+                return;
             }
+        }
 
         }
 

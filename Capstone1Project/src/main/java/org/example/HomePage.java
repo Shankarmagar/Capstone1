@@ -8,30 +8,34 @@ public class HomePage {
     public static void showHomeScreen()
     {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("""
-                
-                                                   -HOME SCREEN-
-                Please follow the following instructions to proceed:
-                'D' Add Deposit
-                'P' Make Payment
-                'L' Ledger
-                'X' Exit
-                """);
+        boolean isValid = true;
 
-        char userChoice = scanner.next().charAt(0);
+        while(isValid) {
+            System.out.print("""
+                                    
+                                                       -HOME SCREEN-
+                    Please follow the following instructions to proceed:
+                    'D' Add Deposit
+                    'P' Make Payment
+                    'L' Ledger
+                    'X' Exit
+                    """);
 
-        if(userChoice == 'L' || userChoice == 'l')
-        {
-            LedgerPage.displayLedger();
+            char userChoice = scanner.next().charAt(0);
+
+            if (userChoice == 'L' || userChoice == 'l') {
+                LedgerPage.displayLedger();
+            } else if (userChoice == 'P' || userChoice == 'p') {
+                doPayment(scanner);
+            } else if (userChoice == 'D' || userChoice == 'd') {
+                doDeposit(scanner);
+            } else if (userChoice == 'X' || userChoice == 'x') {
+                isValid = false;
+            } else {
+               System.out.println("Invalid Choice. Please enter valid option");
+            }
         }
-        else if(userChoice == 'P' || userChoice == 'p')
-        {
-            doPayment(scanner);
-        }
-        else if(userChoice == 'D' || userChoice == 'd')
-        {
-            doDeposit(scanner);
-        }
+
     }
     public static void doPayment(Scanner scanner)
     {
