@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ReportPage {
     public static void showReportScreen(ArrayList<Transaction> listsOfEntries)
-    Mon{
+    {
 
         Scanner scanner = new Scanner(System.in);
         boolean isValid = true;
