@@ -6,10 +6,6 @@ import java.util.Scanner;
 public class CustomSearch {
     public static void showScreenForCustomSearch(ArrayList<Transaction> myLists)
     {
-        for (Transaction t: myLists
-             ) {
-            System.out.println(t.getDate());
-        }
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
@@ -18,7 +14,7 @@ public class CustomSearch {
         System.out.println("Enter the start date in dd/MM/yyyy form: ");
         String startDate = scanner.nextLine();
 
-        System.out.println("Enter the End date in dd//MM/yyyy form: ");
+        System.out.println("Enter the End date in dd/MM/yyyy form: ");
         String endDate = scanner.nextLine();
 
         System.out.println("Enter the description: ");
@@ -38,11 +34,6 @@ public class CustomSearch {
     public static void doSearch(String startDate, String endDate, String description, String vendor, double amt, ArrayList<Transaction> myLists)
     {
         boolean ShowValue = false;
-        ArrayList<Transaction> res = new ArrayList<>();
-        for (Transaction t: myLists
-        ) {
-            System.out.println(t.getDate());
-        }
 
         for(int i =myLists.size()-1; i>=0; i--)
         {
@@ -88,9 +79,6 @@ public class CustomSearch {
         )
         {
          resultIsTrue = true;
-        }
-        else {
-            resultIsTrue = false;
         }
 
         return resultIsTrue;

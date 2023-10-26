@@ -7,12 +7,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LedgerPage {
+
+    //displaying Ledger
     public static void displayLedger()
     {
 
         boolean isValid = true;
         Scanner scanner = new Scanner(System.in);
-        while(isValid) {
             System.out.print("""
                                                      -LEDGER SCREEN-
                     Please follow the following instructions to proceed:
@@ -46,8 +47,10 @@ public class LedgerPage {
             else{
                 System.out.println("Invalid input. re-enter the input");
             }
-        }
+
     }
+
+    //Showing all deposits
     public static void showDeposit(ArrayList<Transaction> listOfEntries)
     {
         System.out.print("""
@@ -65,6 +68,8 @@ public class LedgerPage {
             }
         }
     }
+
+    //Getting the data
     public static ArrayList<Transaction> getMyEntries()
     {
         ArrayList<Transaction> res = new ArrayList<>();
@@ -91,6 +96,8 @@ public class LedgerPage {
         return res;
     }
 
+
+    //Showing the list of entries
     public static void showAll(ArrayList<Transaction> listOfEntries)
     {
         System.out.print("""
@@ -106,6 +113,7 @@ public class LedgerPage {
         }
     }
 
+    //Showing all the payments
     public static void showPayments(ArrayList<Transaction> listOfentries)
     {
         System.out.print("""
@@ -122,13 +130,15 @@ public class LedgerPage {
             }
         }
     }
+
+    //Ask the user to continue or Exit
     public static void askUserToContinueOrExit(Scanner scanner)
     {
         System.out.println("1111 Do you want to continue or exit: ");
         char answer = scanner.next().charAt(0);
-        if(answer == 'y'|| answer == 'Y')
+        if(answer == 'n'|| answer == 'N')
         {
-            displayLedger();
+            System.exit(0);
         }
 
     }

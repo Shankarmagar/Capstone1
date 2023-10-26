@@ -12,8 +12,8 @@ public class ReportPage {
 
         Scanner scanner = new Scanner(System.in);
         boolean isValid = true;
-        while(isValid)
-        {
+
+
             System.out.print("""
                                                  -REPORT SCREEN-
                 Please follow the following instructions to proceed:
@@ -61,7 +61,10 @@ public class ReportPage {
             {
                 return;
             }
-        }
+            else
+            {
+                System.out.println("Invalid entry please read again.");
+            }
 
         }
 
