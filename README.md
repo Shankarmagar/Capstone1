@@ -26,6 +26,8 @@ The following **required** functionality is completed:
  | ----------- | ------------- | ------------- |
  | <img src="https://github.com/Shankarmagar/Capstone1/blob/main/images/Screenshot%202023-10-24%20at%2011.19.10%E2%80%AFAM.png" width = 300> | <img src="https://github.com/Shankarmagar/Capstone1/blob/main/images/Screenshot%202023-10-24%20at%2011.19.30%E2%80%AFAM.png" width = 300> | <img src = "https://github.com/Shankarmagar/Capstone1/blob/main/images/Screenshot%202023-10-24%20at%2011.19.42%E2%80%AFAM.png" width = 300>
 
+<img src="https://github.com/Shankarmagar/Capstone1/blob/main/images/Untitled.png">
+
 ## Notes
 
 Sorting my arraylists based on date and time was abit challenging in this project.
