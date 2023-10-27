@@ -62,7 +62,7 @@ public class ReportPage {
         for(int i= myLists.size()-1; i>=0; i--)
         {
             if(myLists.get(i).getDate().substring(3).equals(CurrentDate.substring(3))) {
-                String s = String.format("%-16s %-10s %-35s %-30s %.2f", myLists.get(i).getDate(), myLists.get(i).getTime(), myLists.get(i).getDescription(), myLists.get(i).getVendor(), myLists.get(i).getAmount());
+                String s = String.format("%-16s %-10s %-35s %-30s $%.2f", myLists.get(i).getDate(), myLists.get(i).getTime(), myLists.get(i).getDescription(), myLists.get(i).getVendor(), myLists.get(i).getAmount());
                 System.out.println(s);
                 isEmpty = false;
             }
@@ -82,7 +82,7 @@ public class ReportPage {
         for(int i= myLists.size()-1; i>=0; i--)
         {
             if(myLists.get(i).getDate().substring(3).equals(previousMonth)) {
-                String s = String.format("%-16s %-10s %-35s %-30s %.2f", myLists.get(i).getDate(), myLists.get(i).getTime(), myLists.get(i).getDescription(), myLists.get(i).getVendor(), myLists.get(i).getAmount());
+                String s = String.format("%-16s %-10s %-35s %-30s $%.2f", myLists.get(i).getDate(), myLists.get(i).getTime(), myLists.get(i).getDescription(), myLists.get(i).getVendor(), myLists.get(i).getAmount());
                 System.out.println(s);
                 isEmpty = false;
             }
@@ -101,7 +101,7 @@ public class ReportPage {
         for(int i= myLists.size()-1; i>=0; i--)
         {
             if(myLists.get(i).getDate().substring(6).equals(currentYear)) {
-                String s = String.format("%-16s %-10s %-35s %-30s %.2f", myLists.get(i).getDate(), myLists.get(i).getTime(), myLists.get(i).getDescription(), myLists.get(i).getVendor(), myLists.get(i).getAmount());
+                String s = String.format("%-16s %-10s %-35s %-30s $%.2f", myLists.get(i).getDate(), myLists.get(i).getTime(), myLists.get(i).getDescription(), myLists.get(i).getVendor(), myLists.get(i).getAmount());
                 System.out.println(s);
                 isEmpty = false;
             }
@@ -120,7 +120,7 @@ public class ReportPage {
         for(int i= myLists.size()-1; i>=0; i--)
         {
             if(myLists.get(i).getDate().substring(6).equals(previousYear)) {
-                String s = String.format("%-16s %-10s %-35s %-30s %.2f", myLists.get(i).getDate(), myLists.get(i).getTime(), myLists.get(i).getDescription(), myLists.get(i).getVendor(), myLists.get(i).getAmount());
+                String s = String.format("%-16s %-10s %-35s %-30s $%.2f", myLists.get(i).getDate(), myLists.get(i).getTime(), myLists.get(i).getDescription(), myLists.get(i).getVendor(), myLists.get(i).getAmount());
                 System.out.println(s);
                 isEmpty = false;
             }
@@ -140,7 +140,7 @@ public class ReportPage {
         for(int i= myLists.size()-1; i>=0; i--)
         {
             if(myLists.get(i).getVendor().equals(vendorInput)) {
-                String s = String.format("%-16s %-10s %-35s %-30s %.2f", myLists.get(i).getDate(), myLists.get(i).getTime(), myLists.get(i).getDescription(), myLists.get(i).getVendor(), myLists.get(i).getAmount());
+                String s = String.format("%-16s %-10s %-35s %-30s $%.2f", myLists.get(i).getDate(), myLists.get(i).getTime(), myLists.get(i).getDescription(), myLists.get(i).getVendor(), myLists.get(i).getAmount());
                 System.out.println(s);
             }
         }
