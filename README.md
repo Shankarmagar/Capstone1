@@ -238,6 +238,20 @@ public class ReportPage {
 - comparing user input with each transaction.getVendor()
 
 
+## Unique code
+```
+public class AccountLedger {
+    public static void main(String[] args) {
+
+        //Welcome Page
+        System.out.print("Welcome to Ledger Office!!!\n");
+        //Call the Home Screen Page
+        HomePage.showHomeScreen();
+    }
+}
+
+```
+This code is my unique code because it wraps everything
 
 
 

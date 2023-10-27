@@ -26,7 +26,7 @@ public class CustomSearch {
         System.out.println("Enter the End Date in DD/MM/YYYY format: ");
         String endDate = scanner.nextLine();
         boolean rerun = CheckInput.checkDate(endDate);
-
+        //Check input validation and ask for re-enter
         while(!rerun)
         {
             System.out.println("Invalid Input see Format and re- enter.");
@@ -62,7 +62,7 @@ public class CustomSearch {
 
 
     }
-
+    // Do search again
     public static void doSearch(String startDate, String endDate, String description, String vendor, double amt, ArrayList<Transaction> myLists) {
         for (int i = myLists.size() - 1; i >= 0; i--) {
             boolean showValue = startDate.isEmpty() || endDate.isEmpty() || isWithinRange(myLists.get(i).getDate(), startDate, endDate);  // Assume the transaction meets all criteria by default
@@ -84,7 +84,7 @@ public class CustomSearch {
         }
     }
 
-
+    //
     public static boolean isWithinRange(String currentDate, String startDate, String endDate) {
         // Split the input dates
         String[] cD = currentDate.split("/");
