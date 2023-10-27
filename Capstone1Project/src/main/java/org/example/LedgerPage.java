@@ -34,15 +34,13 @@ public class LedgerPage {
 
             } else if (userInput == 'D' || userInput == 'd') {
                 showDeposit(myLists);
-                askUserToContinueOrExit(scanner);
+
 
             } else if (userInput == 'A' || userInput == 'a') {
                 showAll(myLists);
-                askUserToContinueOrExit(scanner);
 
             } else if (userInput == 'P' || userInput == 'p') {
                 showPayments(myLists);
-                askUserToContinueOrExit(scanner);
 
             } else if (userInput == 'R' || userInput == 'r') {
                 ReportPage.showReportScreen(myLists);
@@ -135,14 +133,14 @@ public class LedgerPage {
         }
     }
 
-    //Ask the user to continue or Exit
-    public static void askUserToContinueOrExit(Scanner scanner)
+    public static void AskUser(Scanner scanner, boolean isValid)
     {
-        System.out.println("1111 Do you want to continue or exit: ");
-        char answer = scanner.next().charAt(0);
-        if(answer == 'n'|| answer == 'N')
+        System.out.println("Do you want to continue :  ");
+        char ans = scanner.next().charAt(0);
+        if(ans == 'n' || ans=='N')
         {
-            System.exit(0);
+            isValid = false;
+            return;
         }
 
     }

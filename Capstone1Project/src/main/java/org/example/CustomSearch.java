@@ -11,11 +11,31 @@ public class CustomSearch {
         System.out.println("""
                 Please Enter the value for custom search:
                 """);
-        System.out.println("Enter the start date in dd/MM/yyyy form: ");
+        System.out.println("Enter the Date in DD/MM/YYYY format: ");
         String startDate = scanner.nextLine();
+        boolean repeat = CheckInput.checkDate(startDate);
 
-        System.out.println("Enter the End date in dd/MM/yyyy form: ");
+        while(!repeat)
+        {
+            System.out.println("Invalid Input see Format and re- enter.");
+            System.out.println("Enter the Date in DD/MM/YYYY format: ");
+            startDate = scanner.nextLine();
+            repeat = CheckInput.checkDate(startDate);
+        }
+
+        System.out.println("Enter the Date in DD/MM/YYYY format: ");
         String endDate = scanner.nextLine();
+        endDate = scanner.nextLine();
+        boolean rerun = CheckInput.checkDate(endDate);
+
+        while(!rerun)
+        {
+            System.out.println("Invalid Input see Format and re- enter.");
+            System.out.println("Enter the Date in DD/MM/YYYY format: ");
+            endDate = scanner.nextLine();
+            rerun = CheckInput.checkDate(endDate);
+        }
+
 
         System.out.println("Enter the description: ");
         String description = scanner.nextLine();
@@ -83,4 +103,5 @@ public class CustomSearch {
 
         return resultIsTrue;
     }
+
 }

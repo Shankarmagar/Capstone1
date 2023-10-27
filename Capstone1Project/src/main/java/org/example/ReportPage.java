@@ -45,6 +45,7 @@ public class ReportPage {
                     displayByVendor(listsOfEntries, scanner);
                 } else if (usersInput == 6) {
                     CustomSearch.showScreenForCustomSearch(listsOfEntries);
+
                 } else if (usersInput == 0) {
                     isValid = false;
                     return;
@@ -154,7 +155,7 @@ public class ReportPage {
         HashSet<String> s = new HashSet<>();
         for (Transaction myList : myLists) {
             if (!s.contains(myList.getVendor())) {
-                String Add = myList.getVendor()+ "      ";
+                String Add = myList.getVendor() + "      ";
                 res.append(Add);
                 s.add(myList.getVendor());
             }

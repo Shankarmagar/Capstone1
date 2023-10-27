@@ -99,7 +99,7 @@ public class HomePage {
 
         try {
             FileWriter writer = new FileWriter("Transactions.csv",true);
-            String writeLine = String.format("%s|%s|%s|%s|$-%.2f\n",date,time,description,vendor,res); // "8.985678" -> 8.99
+            String writeLine = String.format("%s|%s|%s|%s|$-%.2f\n",date.trim(),time.trim(),description.trim(),vendor.trim(),res); // "8.985678" -> 8.99
             writer.write(writeLine);
             writer.close();
             System.out.println("Payment transaction is saved!!!");
