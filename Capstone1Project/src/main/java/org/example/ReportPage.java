@@ -58,6 +58,12 @@ public class ReportPage {
 
     public static void displayMonthToDate(ArrayList<Transaction> myLists, String CurrentDate)
     {
+        System.out.print("""
+                                -Month To date Transactions-
+                                    
+             """);
+        System.out.printf("%-16s %-10s %-35s %-30s %-10s%n", "Date", "Time", "Description", "Vendor", "Amt");
+
         boolean isEmpty = true;
         for(int i= myLists.size()-1; i>=0; i--)
         {
@@ -75,6 +81,12 @@ public class ReportPage {
 
     public static void displayPreviousMonth(ArrayList<Transaction> myLists, String currentDate)
     {
+        System.out.print("""
+                                -All Previous Month Transactions-
+                                    
+             """);
+        System.out.printf("%-16s %-10s %-35s %-30s %-10s%n", "Date", "Time", "Description", "Vendor", "Amt");
+
         int currentMonth = Integer.parseInt(currentDate.substring(3,5));
         String previousMonth = String.format("%02d/%s",currentMonth-1,currentDate.substring(6));
         System.out.println("PreviousMonth: "+ previousMonth);
@@ -96,6 +108,12 @@ public class ReportPage {
 
     public static void displayYearToDate(ArrayList<Transaction> myLists, String currentDate)
     {
+        System.out.print("""
+                                -Year to date Transactions-
+                                    
+             """);
+        System.out.printf("%-16s %-10s %-35s %-30s %-10s%n", "Date", "Time", "Description", "Vendor", "Amt");
+
         String currentYear = currentDate.substring(6);
         boolean isEmpty = true;
         for(int i= myLists.size()-1; i>=0; i--)
@@ -113,6 +131,12 @@ public class ReportPage {
     }
     public static void displayPreviousYear(ArrayList<Transaction>myLists, String currentDate)
     {
+        System.out.print("""
+                                -Previous Year Transactions-
+                                    
+             """);
+        System.out.printf("%-16s %-10s %-35s %-30s %-10s%n", "Date", "Time", "Description", "Vendor", "Amt");
+
         int currentYear = Integer.parseInt(currentDate.substring(6));
         String previousYear = ""+(currentYear-1);
         System.out.println("PreviousYear: "+ previousYear);
