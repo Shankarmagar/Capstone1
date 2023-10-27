@@ -136,10 +136,17 @@ public class HomePage {
         boolean rerun = CheckInput.checkTime(time);
         while(!rerun)
         {
+
             System.out.println("You have invalid input read format and re- enter");
             System.out.println("Enter the time in HH:mm format: ");
             time= scanner.nextLine();
-            rerun = CheckInput.checkDate(time);
+            if(CheckInput.checkTime(time))
+            {
+                rerun = true;
+            }
+            else{
+                rerun = false;
+            }
         }
         System.out.println("Enter the Description: ");
         String description = scanner.nextLine();

@@ -72,7 +72,18 @@ public class CheckInput {
         {
             return false;
         }
-        try {
+        for(int i =0; i<t.length;i++)
+        {
+            for(int j =0; j<t[1].length(); j++)
+            {
+                if(!Character.isDigit(t[i].charAt(j)))
+                {
+                    System.out.println("Character is present.");
+                    return false;
+                }
+            }
+        }
+
             if (Integer.parseInt(t[0]) > 24 ) // hours
             {
                 System.out.println("Your hour input is invalid");
@@ -83,11 +94,7 @@ public class CheckInput {
                 System.out.println("Your min is invalid.");
                 return false;
             }
-        }
-        catch (IOError error){
-            System.out.println("There is character in your output");
-            return false;
-    }
+
         return true;
     }
 
