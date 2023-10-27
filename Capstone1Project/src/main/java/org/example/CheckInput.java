@@ -1,5 +1,6 @@
 package org.example;
 
+import javax.annotation.processing.SupportedSourceVersion;
 import java.io.IOError;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -28,6 +29,7 @@ public class CheckInput {
         for (int i = 0; i < s.length; i++) {
             for (int j = 0; j < s[i].length(); j++) {
                 if (!Character.isDigit(s[i].charAt(j))) {
+                    System.out.println("Character is present in your date");
                     return false; // If any character is not a digit, it's an invalid date
                 }
             }
@@ -35,10 +37,12 @@ public class CheckInput {
 
             if (Integer.parseInt(s[0]) > 31 || Integer.parseInt(s[0]) == 0) //In month there cannot be more than 31 days
             {
+                System.out.println("Value for date is not valid Check format");
                 return false;
             }
             if (Integer.parseInt(s[1])>12 || Integer.parseInt(s[1])==0)// In year there cannot be more than 12 months
             {
+                System.out.println("Value for month is not valid check format");
                 return false;
             }
 

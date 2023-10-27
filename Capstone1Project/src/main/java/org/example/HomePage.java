@@ -21,6 +21,8 @@ public class HomePage {
                     'P' Make Payment
                     'L' Ledger
                     'X' Exit
+                    
+                    Please choose your option: 
                     """);
 
             char userChoice = scanner.next().charAt(0);
@@ -92,7 +94,7 @@ public class HomePage {
             }
             catch (InputMismatchException e)
             {
-                System.out.println("Re - enter");
+                System.out.println("Invalid input please re-enter");
                 scanner.nextLine();
             }
         }

@@ -24,6 +24,8 @@ public class LedgerPage {
                     'P' Payments
                     'R' Reports
                     'H' Home
+                    
+                    Please choose your option:
                     """);
             char userInput = scanner.next().charAt(0);
             ArrayList<Transaction> myLists = getMyEntries();
