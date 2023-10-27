@@ -1,5 +1,9 @@
 package org.example;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Comparator;
+import java.util.Date;
+
 public class
 Transaction {
     private String date;
@@ -72,5 +76,23 @@ class DateComparator implements Comparator<Transaction> {
         }
 
         return dateComparison;
+    }
+}
+class DateComparatorNew implements Comparator<Transaction> {
+    private final SimpleDateFormat dateFormats = new SimpleDateFormat("dd/MM/yyyy");
+
+    @Override
+    public int compare(Transaction t1, Transaction t2) {
+        try {
+            Date date1 = dateFormats.parse(t1.getDate());
+            Date date2 = dateFormats.parse(t2.getDate());
+
+            return date1.compareTo(date2);
+        } catch (ParseException e) {
+            // Handle parsing exceptions if needed
+            e.printStackTrace();
+        }
+
+        return 0; // Return 0 in case of an error (you can customize this behavior)
     }
 }

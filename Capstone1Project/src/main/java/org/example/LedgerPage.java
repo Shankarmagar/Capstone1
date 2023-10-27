@@ -29,7 +29,9 @@ public class LedgerPage {
                     """);
             char userInput = scanner.next().charAt(0);
             ArrayList<Transaction> myLists = getMyEntries();
-            myLists.sort(new DateComparator());
+            myLists.sort(new DateComparatorNew());
+
+
             if (userInput == 'H' || userInput == 'h') {
                 isValid = false;
                 return;
